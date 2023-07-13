@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/main.css")
+    script(src="https://kit.fontawesome.com/9b160185b1.js", crossorigin="anonymous")
+  body
+
+    nav
+      div
+        a(href="/")
+        a(href="/")
+        a(href="/")
+        a(href="/")
+        a(href="/") 
+
+    div.main
+        div.child.description
+          p.description-text
+            | Hi, I'm 
+            span.name 
+              | John Doe
+            | , a 
+            span.job 
+              | Web Developer
+            |  based in 
+            span.location 
+              | New York
+            | . I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.
+        
+        div.clock
+        
+        div.child.links-container
+          a(href="https://www.instagram.com/")
+            i.fa-brands.fa-instagram.fa-2xl
+            | Instagram 
+          a(href="https://github.com/") 
+            i.fa-brands.fa-github.fa-2xl 
+            | Github
+          a(href="https://www.linkedin.com/") 
+            i.fa-brands.fa-linkedin-in.fa-2xl
+            | Linkedin
+  
+    script(src="../js/clock.js")
+
+    div.footer
+        div.bubbles
+            - for (var i = 0; i < 128; i++) //Small numbers looks nice too
+                div.bubble(style=`--size:${1+Math.random()*4}rem; --distance:${6+Math.random()*4}rem; --position:${-5+Math.random()*110}%; --time:${2+Math.random()*2}s; --delay:${-1*(2+Math.random()*2)}s;`)

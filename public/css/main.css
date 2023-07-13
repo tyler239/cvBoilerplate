@@ -1,0 +1,161 @@
+@media (min-width: 1000px) {
+  body {
+    overflow-y: hidden;
+  }
+  body .main {
+    flex-direction: row;
+    margin-bottom: 8rem;
+  }
+  body .footer .bubbles {
+    position: sticky;
+    height: auto;
+    background: var(--footer-background);
+    width: 100%;
+  }
+  body .footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+  }
+}
+@media (max-width: 999px) {
+  .main {
+    flex-direction: column;
+    margin: 5rem;
+  }
+}
+body {
+  background-size: cover;
+  background-image: url("../background.jpg");
+  background-position: center;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+body nav {
+  z-index: 1;
+  background-color: #eaeaea;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 3rem;
+}
+body nav div {
+  margin: 0;
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+body nav div a {
+  text-decoration: none;
+  background-color: #eaeaea;
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: #333;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+body nav div a:hover {
+  background-color: #333;
+  color: #eaeaea;
+}
+body .main {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+body .main .child {
+  flex-basis: 0;
+  flex-grow: 1;
+  margin: 1rem;
+}
+body .main .description {
+  background-color: #333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+body .main .description .description-text {
+  color: #eaeaea;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+body .main .clock {
+  background-color: #333;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  color: #eaeaea;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+body .main .links-container {
+  display: grid;
+  grid-template-rows: repeat(3, auto); /* Adjust the number of rows as needed */
+  gap: 1rem; /* Adjust the gap between links */
+  text-align: center;
+  height: auto;
+  width: auto;
+  padding: 1rem;
+  margin: 0;
+}
+body .main .links-container a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  text-decoration: none;
+  color: #eaeaea;
+  border-radius: 1rem; /* Add rounded borders */
+}
+body .footer {
+  z-index: 1;
+  --footer-background: #cccccc ;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  min-height: 2rem;
+  background-color: var(--footer-background);
+}
+
+@keyframes bubble-size {
+  0%, 75% {
+    width: var(--size, 3rem);
+    height: var(--size, 3rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+@keyframes bubble-move {
+  0% {
+    bottom: -3rem;
+  }
+  100% {
+    bottom: var(--distance, 5rem);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
